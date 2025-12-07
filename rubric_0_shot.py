@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 from vllm import LLM, SamplingParams
-from vllm.sampling_params import GuidedDecodingParams
+# from vllm.sampling_params import GuidedDecodingParams
 from tqdm import tqdm
 
 # ====== CONFIG ======
@@ -118,14 +118,14 @@ def main():
     )
 
     # Guided decoding: force JSON to match JSON_SCHEMA
-    guided_params = GuidedDecodingParams(
-        json_schema=JSON_SCHEMA
-    )
+    # guided_params = GuidedDecodingParams(
+    #     json_schema=JSON_SCHEMA
+    # )
 
     sampling_params = SamplingParams(
         temperature=0.0,
         max_tokens=256,
-        guided_decoding=guided_params,
+        # guided_decoding=guided_params,
     )
 
     # Build prompts
